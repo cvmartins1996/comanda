@@ -3,11 +3,19 @@ package io.restaurante.core;
 public class Cliente {
 
 	private String nome;
-	private int id;
+	private int mesa;
 
-	public Cliente(int id, String nome) {
-		this.id = id;
+	public Cliente(int mesa, String nome) {
+		this.mesa = mesa;
 		this.nome = nome;
+	}
+	
+	public String getNome() {
+		return nome;
+	}
+	
+	public int getMesa() {
+		return mesa;
 	}
 
 }

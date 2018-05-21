@@ -19,13 +19,17 @@ public class App {
 	public static void main(String[] args) {
 		Cliente cliente = new Cliente(1, "martins");
 		Garcom garcom = new Garcom();
-		Pedido pedido = new Pedido("prato do dia");
 		int quantidade = 2;
-		pedido.setQuantidade(quantidade);
+		Pedido pedido = new Pedido("prato do dia", quantidade);
 		pedido.setCliente(cliente);
 		garcom.adicionaPedido(pedido, TipoPedido.PENDENTE);
 		
-		Cozinha cozinha = new Cozinha();
-		cozinha.setPedido(pedido, TipoPedido.COZINHA);
+		Cozinha cozinha = new Cozinha(pedido, TipoPedido.COZINHA);
+		
+		
+		garcom.entregaPedido(cozinha);
+		
+		
+		
 	}
 }
